@@ -11,9 +11,6 @@ public class AllCars {
         carsList = new ArrayList<>();
     }
 
-//- Editar
-//- buscar um
-
     public boolean addCar(Car newCar){
         if(newCar != null){
             carsList.add(newCar);
@@ -30,8 +27,12 @@ public class AllCars {
         return carsList.remove(chosenCar);
     }
 
-    public boolean editCar(Car carModified){}
-
-    public Car returnCar(){}
+    public Car returnCar(String plate){
+        for (Car iterator: carsList) {
+            if(iterator.getPlate().equalsIgnoreCase(plate))
+                return iterator;
+        }
+        return new Car("0", -1);
+    }
 
 }
