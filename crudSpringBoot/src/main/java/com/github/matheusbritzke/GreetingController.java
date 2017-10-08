@@ -25,5 +25,12 @@ public class GreetingController {
         return car.toString();
     }
 
-    
+    @RequestMapping(method = RequestMethod.GET, value = "/{plate}")
+    @ResponseBody
+    public String foundCar(@PathVariable(value = "plate") String plate){
+        Car foundCar = cars.returnCar(plate);
+        if(foundCar.getPlate() == "0")
+            return "Car not found";
+        return foundCar.toString();
+    }
 }
