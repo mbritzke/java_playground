@@ -39,4 +39,13 @@ public class GreetingController {
     public List<Car> carsList(){
         return cars.getCarsList();
    }
+
+   @RequestMapping(method = RequestMethod.GET, value = "/delete/{plate}")
+   @ResponseBody
+    public String deleteCar(@PathVariable(value = "plate") String plate){
+        boolean status = cars.deleteCar(plate);
+        if (status)
+            return "Car removed";
+        return "Car not found";
+   }
 }

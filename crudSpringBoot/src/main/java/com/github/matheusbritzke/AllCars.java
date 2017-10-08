@@ -1,43 +1,48 @@
 package com.github.matheusbritzke;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AllCars {
 
-    private List<Car> carsList;
+    private ArrayList<Car> carsList;
 
-    public AllCars(){
+    public AllCars() {
         carsList = new ArrayList<>();
     }
 
-    public boolean addCar(Car newCar){
-        if(newCar != null){
+    public boolean addCar(Car newCar) {
+        if (newCar != null) {
             carsList.add(newCar);
             return true;
         }
         return false;
     }
 
-    public List<Car> getCarsList() {
+    public ArrayList<Car> getCarsList() {
         return carsList;
     }
 
-    public boolean deleteCar(Car chosenCar){
-        return carsList.remove(chosenCar);
+    public boolean deleteCar(String plate) {
+        for (int i = 0; i < carsList.size(); i++) {
+            if(carsList.get(i).getPlate().equalsIgnoreCase(plate)){
+                carsList.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
 
-    public Car returnCar(String plate){
-        for (Car iterator: carsList) {
-            if(iterator.getPlate().equalsIgnoreCase(plate))
+    public Car returnCar(String plate) {
+        for (Car iterator : carsList) {
+            if (iterator.getPlate().equalsIgnoreCase(plate))
                 return iterator;
         }
         return new Car("0", -1);
     }
 
-    public Car editCar(Car carModified){
-        for (Car iterator: carsList) {
-            if(iterator.getPlate().equalsIgnoreCase(carModified.getPlate())){
+    public Car editCar(Car carModified) {
+        for (Car iterator : carsList) {
+            if (iterator.getPlate().equalsIgnoreCase(carModified.getPlate())) {
                 iterator = carModified;
                 return iterator;
             }
