@@ -35,14 +35,14 @@ public class AllCars {
         return new Car("0", -1);
     }
 
-    public boolean editCar(Car carModified){
+    public Car editCar(Car carModified){
         for (Car iterator: carsList) {
             if(iterator.getPlate().equalsIgnoreCase(carModified.getPlate())){
                 iterator = carModified;
-                return true;
+                return iterator;
             }
         }
-        return false;
+        return new Car("0", -1);
     }
 
 }

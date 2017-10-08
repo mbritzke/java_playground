@@ -1,5 +1,6 @@
 package com.github.matheusbritzke;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class GreetingController {
                 String.format(template, name));
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{plate}/{powerRating}")
+    @RequestMapping(method = RequestMethod.GET, value = "newcar/{plate}/{powerRating}")
     @ResponseBody
     public String newCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating){
         Car car = new Car(plate, powerRating);
@@ -33,4 +34,9 @@ public class GreetingController {
             return "Car not found";
         return foundCar.toString();
     }
+
+   @RequestMapping("/list")
+    public List<Car> carsList(){
+        return cars.getCarsList();
+   }
 }
