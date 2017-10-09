@@ -11,7 +11,7 @@ public class CarController {
 
     @RequestMapping(method = RequestMethod.GET, value = "newcar/{plate}/{powerRating}")
     @ResponseBody
-    public String newCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating){
+    public String newCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
         Car car = new Car(plate, powerRating);
         cars.addCar(car);
         return car.toString();
@@ -19,24 +19,30 @@ public class CarController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/{plate}")
     @ResponseBody
-    public String foundCar(@PathVariable(value = "plate") String plate){
+    public String foundCar(@PathVariable(value = "plate") String plate) {
         Car foundCar = cars.returnCar(plate);
-        if(foundCar.getPlate() == "0")
+        if (foundCar.getPlate() == "0")
             return "Car not found";
         return foundCar.toString();
     }
 
-   @RequestMapping("/list")
-    public List<Car> carsList(){
+    @RequestMapping("/list")
+    public List<Car> carsList() {
         return cars.getCarsList();
-   }
+    }
 
-   @RequestMapping(method = RequestMethod.GET, value = "/delete/{plate}")
-   @ResponseBody
-    public String deleteCar(@PathVariable(value = "plate") String plate){
+    @RequestMapping(method = RequestMethod.GET, value = "/delete/{plate}")
+    @ResponseBody
+    public String deleteCar(@PathVariable(value = "plate") String plate) {
         boolean status = cars.deleteCar(plate);
         if (status)
             return "Car removed";
         return "Car not found";
-   }
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "edit/{plate}/{powerRating}")
+    @ResponseBody
+    public String foundCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
+        return cars.editCar(plate, powerRating);
+    }
 }
