@@ -40,14 +40,14 @@ public class AllCars {
         return new Car("0", -1);
     }
 
-    public Car editCar(Car carModified) {
-        for (Car iterator : carsList) {
-            if (iterator.getPlate().equalsIgnoreCase(carModified.getPlate())) {
-                iterator = carModified;
-                return iterator;
+    public String editCar(String plate, Double powerRating) {
+        for (int i = 0; i < carsList.size(); i++) {
+            if(carsList.get(i).getPlate().equalsIgnoreCase(plate)){
+                carsList.get(i).setPowerRating(powerRating);
+                return "Car updated";
             }
         }
-        return new Car("0", -1);
+        return "Car not found";
     }
 
 }
