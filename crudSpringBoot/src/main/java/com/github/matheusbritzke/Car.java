@@ -18,6 +18,10 @@ public class Car {
         return powerRating;
     }
 
+    public double setPowerRating(double powerRating){
+        this.powerRating = powerRating;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
@@ -25,4 +29,5 @@ public class Car {
                 ", powerRating=" + powerRating +
                 '}';
     }
+
 }
