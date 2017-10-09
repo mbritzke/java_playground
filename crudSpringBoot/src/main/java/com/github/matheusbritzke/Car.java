@@ -18,7 +18,7 @@ public class Car {
         return powerRating;
     }
 
-    public double setPowerRating(double powerRating){
+    public void setPowerRating(double powerRating){
         this.powerRating = powerRating;
     }
 
