@@ -17,4 +17,7 @@ public class CarService {
         return car.toString();
     }
 
+    public String getCarsList() {
+        return carsList.getCarsList().toString();
+    }
 }
