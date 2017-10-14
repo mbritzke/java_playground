@@ -18,6 +18,10 @@ public class Car {
         return powerRating;
     }
 
+    public void setPlate(String plate) {
+        this.plate = plate;
+    }
+
     public void setPowerRating(double powerRating){
         this.powerRating = powerRating;
     }
