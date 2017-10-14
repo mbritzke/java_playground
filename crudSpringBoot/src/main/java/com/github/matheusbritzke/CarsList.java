@@ -2,11 +2,11 @@ package com.github.matheusbritzke;
 
 import java.util.ArrayList;
 
-public class AllCars {
+public class CarsList {
 
     private ArrayList<Car> carsList;
 
-    public AllCars() {
+    public CarsList() {
         carsList = new ArrayList<>();
     }
 
