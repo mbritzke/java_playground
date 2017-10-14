@@ -20,4 +20,13 @@ public class CarService {
     public String getCarsList() {
         return carsList.getCarsList().toString();
     }
+
+    public String deleteCar(String plate){
+        boolean status = carsList.deleteCar(plate);
+        if (status)
+            return "Car removed";
+        return "Car not found";
+    }
+
+    
 }
