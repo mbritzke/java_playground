@@ -9,7 +9,7 @@ public class CarController {
 
     private AllCars cars = new AllCars();
 
-    @RequestMapping(method = RequestMethod.GET, value = "newcar/{plate}/{powerRating}")
+    @RequestMapping(method = RequestMethod.GET, value = "new/{plate}/{powerRating}")
     @ResponseBody
     public String newCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
         Car car = new Car(plate, powerRating);
@@ -17,7 +17,7 @@ public class CarController {
         return car.toString();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{plate}")
+    @RequestMapping(method = RequestMethod.GET, value = "found/{plate}")
     @ResponseBody
     public String foundCar(@PathVariable(value = "plate") String plate) {
         Car foundCar = cars.returnCar(plate);
@@ -31,7 +31,7 @@ public class CarController {
         return cars.getCarsList();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/delete/{plate}")
+    @RequestMapping(method = RequestMethod.GET, value = "removed/{plate}")
     @ResponseBody
     public String deleteCar(@PathVariable(value = "plate") String plate) {
         boolean status = cars.deleteCar(plate);
