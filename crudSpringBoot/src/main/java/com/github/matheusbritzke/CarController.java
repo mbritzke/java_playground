@@ -40,7 +40,7 @@ public class CarController {
         return "Car not found";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "edit/{plate}/{powerRating}")
+    @RequestMapping(method = RequestMethod.GET, value = "edited/{plate}/{powerRating}")
     @ResponseBody
     public String foundCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
         return cars.editCar(plate, powerRating);
