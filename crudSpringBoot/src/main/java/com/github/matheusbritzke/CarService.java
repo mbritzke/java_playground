@@ -10,4 +10,11 @@ public class CarService {
         return car.toString();
     }
 
+    public String foundCar(String plate){
+        Car car = carsList.returnCar(plate);
+        if (car.getPlate().equalsIgnoreCase("0"))
+            return "Car not found";
+        return car.toString();
+    }
+
 }
