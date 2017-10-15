@@ -1,48 +1,37 @@
 package com.github.matheusbritzke;
 
-import java.util.List;
-
 import org.springframework.web.bind.annotation.*;
+
+import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
 public class CarController {
 
-    private AllCars cars = new AllCars();
+    private CarService service = new CarService();
 
-    @RequestMapping(method = RequestMethod.GET, value = "new/{plate}/{powerRating}")
-    @ResponseBody
+    @RequestMapping(method = POST, value = "/new/{plate}/{powerRating}")
     public String newCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
-        Car car = new Car(plate, powerRating);
-        cars.addCar(car);
-        return car.toString();
+        return service.newCar(plate, powerRating);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "found/{plate}")
-    @ResponseBody
-    public String foundCar(@PathVariable(value = "plate") String plate) {
-        Car foundCar = cars.returnCar(plate);
-        if (foundCar.getPlate() == "0")
-            return "Car not found";
-        return foundCar.toString();
+    @RequestMapping(method = GET, value = "/found/{plate}")
+    public String findCar(@PathVariable(value = "plate") String plate) {
+        return service.findCar(plate);
     }
 
     @RequestMapping("/list")
-    public List<Car> carsList() {
-        return cars.getCarsList();
+    public String carsList() {
+        return service.getCarsList();
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "removed/{plate}")
-    @ResponseBody
+    @RequestMapping(method = DELETE, value = "/deleted/{plate}")
     public String deleteCar(@PathVariable(value = "plate") String plate) {
-        boolean status = cars.deleteCar(plate);
-        if (status)
-            return "Car removed";
-        return "Car not found";
+        return service.deleteCar(plate);
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "edited/{plate}/{powerRating}")
-    @ResponseBody
-    public String foundCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
-        return cars.editCar(plate, powerRating);
+    @RequestMapping(method = PUT, value = "/updated/{plate}/{powerRating}")
+    public String updateCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
+        return service.updateCar(plate, powerRating);
     }
+
 }
