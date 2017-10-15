@@ -40,7 +40,7 @@ public class CarsList {
         return new Car("0", -1);
     }
 
-    public String editCar(String plate, Double powerRating) {
+    public String updateCar(String plate, Double powerRating) {
         for (int i = 0; i < carsList.size(); i++) {
             if(carsList.get(i).getPlate().equalsIgnoreCase(plate)){
                 carsList.get(i).setPowerRating(powerRating);
