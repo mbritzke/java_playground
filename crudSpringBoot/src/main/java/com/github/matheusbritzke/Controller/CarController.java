@@ -1,5 +1,7 @@
-package com.github.matheusbritzke;
+package com.github.matheusbritzke.Controller;
 
+import com.github.matheusbritzke.Crud.Car;
+import com.github.matheusbritzke.Service.CarService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
