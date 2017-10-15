@@ -13,11 +13,11 @@ public class Car {
     }
 
     public String getPlate() {
-        return plate;
+        return this.plate;
     }
 
     public double getPowerRating() {
-        return powerRating;
+        return this.powerRating;
     }
 
     public void setPlate(String plate) {
