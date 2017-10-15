@@ -37,7 +37,7 @@ public class CarsList {
             if (iterator.getPlate().equalsIgnoreCase(plate))
                 return iterator;
         }
-        return new Car();
+        return new Car("0", -1);
     }
 
     public String updateCar(String plate, Double powerRating) {
