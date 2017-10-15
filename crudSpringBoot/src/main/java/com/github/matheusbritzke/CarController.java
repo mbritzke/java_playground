@@ -2,6 +2,8 @@ package com.github.matheusbritzke;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @RestController
@@ -14,13 +16,13 @@ public class CarController {
         return service.newCar(plate, powerRating);
     }
 
-    @RequestMapping(method = GET, value = "/found/{plate}")
-    public String findCar(@PathVariable(value = "plate") String plate) {
+    @GetMapping(value = "/found/{plate}")
+    public Car findCar(@PathVariable(value = "plate") String plate) {
         return service.findCar(plate);
     }
 
-    @RequestMapping("/list")
-    public String carsList() {
+    @GetMapping("/list")
+    public ArrayList<Car> carsList() {
         return service.getCarsList();
     }
 
