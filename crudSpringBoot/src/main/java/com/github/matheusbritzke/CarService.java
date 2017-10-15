@@ -10,7 +10,7 @@ public class CarService {
         return car.toString();
     }
 
-    public String foundCar(String plate){
+    public String findCar(String plate){
         Car car = carsList.returnCar(plate);
         if (car.getPlate().equalsIgnoreCase("0"))
             return "Car not found";
@@ -28,5 +28,7 @@ public class CarService {
         return "Car not found";
     }
 
-    
+    public String updateCar(String plate, double powerRating){
+        return carsList.updateCar(plate, powerRating);
+    }
 }
