@@ -5,6 +5,8 @@ public class Car {
     private String plate;
     private double powerRating;
 
+    public Car() {}
+
     public Car(String plate, double powerRating) {
         this.plate = plate;
         this.powerRating = powerRating;
