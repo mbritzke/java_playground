@@ -37,17 +37,17 @@ public class CarsList {
             if (iterator.getPlate().equalsIgnoreCase(plate))
                 return iterator;
         }
-        return new Car("0", -1);
+        return new Car();
     }
 
-    public String updateCar(String plate, Double powerRating) {
+    public Car updateCar(String plate, Double powerRating) {
         for (int i = 0; i < carsList.size(); i++) {
             if(carsList.get(i).getPlate().equalsIgnoreCase(plate)){
                 carsList.get(i).setPowerRating(powerRating);
-                return "Car updated";
+                return carsList.get(i);
             }
         }
-        return "Car not found";
+        return new Car();
     }
 
 }
