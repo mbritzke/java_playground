@@ -25,12 +25,12 @@ public class CarController {
     }
 
     @DeleteMapping(value = "/deleted/{plate}")
-    public String deleteCar(@PathVariable(value = "plate") String plate) {
+    public Car deleteCar(@PathVariable(value = "plate") String plate) {
         return service.deleteCar(plate);
     }
 
     @PutMapping(value = "/updated/{plate}/{powerRating}")
-    public String updateCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
+    public Car updateCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
         return service.updateCar(plate, powerRating);
     }
 

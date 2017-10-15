@@ -23,14 +23,11 @@ public class CarService {
         return carsList.getCarsList();
     }
 
-    public String deleteCar(String plate){
-        boolean status = carsList.deleteCar(plate);
-        if (status)
-            return "Car removed";
-        return "Car not found";
+    public Car deleteCar(String plate){
+        return carsList.deleteCar(plate);
     }
 
-    public String updateCar(String plate, double powerRating){
+    public Car updateCar(String plate, double powerRating){
         return carsList.updateCar(plate, powerRating);
     }
 }

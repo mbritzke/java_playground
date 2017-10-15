@@ -22,14 +22,15 @@ public class CarsList {
         return carsList;
     }
 
-    public boolean deleteCar(String plate) {
+    public Car deleteCar(String plate) {
         for (int i = 0; i < carsList.size(); i++) {
             if(carsList.get(i).getPlate().equalsIgnoreCase(plate)){
+                Car car = carsList.get(i);
                 carsList.remove(i);
-                return true;
+                return car;
             }
         }
-        return false;
+        return new Car();
     }
 
     public Car returnCar(String plate) {
