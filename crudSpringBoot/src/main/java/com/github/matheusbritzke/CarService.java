@@ -6,10 +6,10 @@ public class CarService {
 
     private CarsList carsList = new CarsList();
 
-    public String newCar(String plate, double powerRating){
+    public Car newCar(String plate, double powerRating){
         Car car = new Car(plate, powerRating);
         carsList.addCar(car);
-        return car.toString();
+        return car;
     }
 
     public Car findCar(String plate){

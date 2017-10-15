@@ -4,15 +4,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-import static org.springframework.web.bind.annotation.RequestMethod.*;
-
 @RestController
 public class CarController {
 
     private CarService service = new CarService();
 
-    @RequestMapping(method = POST, value = "/new/{plate}/{powerRating}")
-    public String newCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
+    @PostMapping(value = "/new/{plate}/{powerRating}")
+    public Car newCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
         return service.newCar(plate, powerRating);
     }
 
@@ -26,12 +24,12 @@ public class CarController {
         return service.getCarsList();
     }
 
-    @RequestMapping(method = DELETE, value = "/deleted/{plate}")
+    @DeleteMapping(value = "/deleted/{plate}")
     public String deleteCar(@PathVariable(value = "plate") String plate) {
         return service.deleteCar(plate);
     }
 
-    @RequestMapping(method = PUT, value = "/updated/{plate}/{powerRating}")
+    @PutMapping(value = "/updated/{plate}/{powerRating}")
     public String updateCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
         return service.updateCar(plate, powerRating);
     }
