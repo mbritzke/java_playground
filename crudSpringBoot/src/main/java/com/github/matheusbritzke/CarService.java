@@ -1,5 +1,7 @@
 package com.github.matheusbritzke;
 
+import java.util.ArrayList;
+
 public class CarService {
 
     private CarsList carsList = new CarsList();
@@ -10,15 +12,15 @@ public class CarService {
         return car.toString();
     }
 
-    public String findCar(String plate){
+    public Car findCar(String plate){
         Car car = carsList.returnCar(plate);
-        if (car.getPlate().equalsIgnoreCase("0"))
-            return "Car not found";
-        return car.toString();
+        if (car.getPlate()==null)
+            return new Car();
+        return car;
     }
 
-    public String getCarsList() {
-        return carsList.getCarsList().toString();
+    public ArrayList<Car> getCarsList() {
+        return carsList.getCarsList();
     }
 
     public String deleteCar(String plate){
