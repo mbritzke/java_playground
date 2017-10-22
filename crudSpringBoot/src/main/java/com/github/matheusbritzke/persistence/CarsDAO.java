@@ -5,11 +5,11 @@ import com.github.matheusbritzke.exception.CarException;
 
 import java.util.ArrayList;
 
-public class CarsList {
+public class CarsDAO {
 
     private ArrayList<Car> carsList;
 
-    public CarsList() {
+    public CarsDAO() {
         carsList = new ArrayList<>();
     }
 

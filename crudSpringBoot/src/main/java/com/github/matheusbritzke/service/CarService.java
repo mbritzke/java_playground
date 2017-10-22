@@ -1,32 +1,32 @@
 package com.github.matheusbritzke.service;
 
 import com.github.matheusbritzke.car.Car;
-import com.github.matheusbritzke.persistence.CarsList;
+import com.github.matheusbritzke.persistence.CarsDAO;
 
 import java.util.ArrayList;
 
 public class CarService {
 
-    private CarsList carsList = new CarsList();
+    private CarsDAO carsDAO = new CarsDAO();
 
     public Car newCar(Car car){
-        carsList.addCar(car);
+        carsDAO.addCar(car);
         return car;
     }
 
     public Car findCar(String plate){
-        return carsList.returnCar(plate);
+        return carsDAO.returnCar(plate);
     }
 
     public ArrayList<Car> getCarsList() {
-        return carsList.getCarsList();
+        return carsDAO.getCarsList();
     }
 
     public Car deleteCar(String plate){
-        return carsList.deleteCar(plate);
+        return carsDAO.deleteCar(plate);
     }
 
     public Car updateCar(String plate, double powerRating){
-        return carsList.updateCar(plate, powerRating);
+        return carsDAO.updateCar(plate, powerRating);
     }
 }
