@@ -1,7 +1,7 @@
-package com.github.matheusbritzke.Controller;
+package com.github.matheusbritzke.controller;
 
-import com.github.matheusbritzke.Car.Car;
-import com.github.matheusbritzke.Service.CarService;
+import com.github.matheusbritzke.car.Car;
+import com.github.matheusbritzke.service.CarService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.websocket.server.PathParam;

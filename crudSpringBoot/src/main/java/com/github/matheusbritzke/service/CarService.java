@@ -1,7 +1,7 @@
-package com.github.matheusbritzke.Service;
+package com.github.matheusbritzke.service;
 
-import com.github.matheusbritzke.Car.Car;
-import com.github.matheusbritzke.DAO.CarsList;
+import com.github.matheusbritzke.car.Car;
+import com.github.matheusbritzke.persistence.CarsList;
 
 import java.util.ArrayList;
 
@@ -15,10 +15,7 @@ public class CarService {
     }
 
     public Car findCar(String plate){
-        Car car = carsList.returnCar(plate);
-        if (car.getPlate()==null)
-            return new Car();
-        return car;
+        return carsList.returnCar(plate);
     }
 
     public ArrayList<Car> getCarsList() {

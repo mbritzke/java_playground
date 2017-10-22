@@ -1,6 +1,7 @@
-package com.github.matheusbritzke.DAO;
+package com.github.matheusbritzke.persistence;
 
-import com.github.matheusbritzke.Car.Car;
+import com.github.matheusbritzke.car.Car;
+import com.github.matheusbritzke.exception.CarException;
 
 import java.util.ArrayList;
 
@@ -40,7 +41,7 @@ public class CarsList {
             if (iterator.getPlate().equalsIgnoreCase(plate))
                 return iterator;
         }
-        return new Car();
+        return new CarException();
     }
 
     public Car updateCar(String plate, Double powerRating) {
