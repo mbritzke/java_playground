@@ -1,4 +1,4 @@
-package com.github.matheusbritzke.Crud;
+package com.github.matheusbritzke.Car;
 
 public class Car {
 

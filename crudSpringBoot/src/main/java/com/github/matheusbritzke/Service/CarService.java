@@ -1,7 +1,7 @@
 package com.github.matheusbritzke.Service;
 
-import com.github.matheusbritzke.Crud.Car;
-import com.github.matheusbritzke.List.CarsList;
+import com.github.matheusbritzke.Car.Car;
+import com.github.matheusbritzke.DAO.CarsList;
 
 import java.util.ArrayList;
 
