@@ -33,7 +33,7 @@ public class CarsDAO {
                 return car;
             }
         }
-        return new Car();
+        return new CarException();
     }
 
     public Car returnCar(String plate) {
@@ -44,14 +44,14 @@ public class CarsDAO {
         return new CarException();
     }
 
-    public Car updateCar(String plate, Double powerRating) {
+    public Car updateCar(String plate, Car car) {
         for (int i = 0; i < carsList.size(); i++) {
             if(carsList.get(i).getPlate().equalsIgnoreCase(plate)){
-                carsList.get(i).setPowerRating(powerRating);
-                return carsList.get(i);
+                carsList.set(i, car);
+                return car;
             }
         }
-        return new Car();
+        return new CarException();
     }
 
 }

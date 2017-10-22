@@ -26,7 +26,7 @@ public class CarService {
         return carsDAO.deleteCar(plate);
     }
 
-    public Car updateCar(String plate, double powerRating){
-        return carsDAO.updateCar(plate, powerRating);
+    public Car updateCar(String plate, Car car){
+        return carsDAO.updateCar(plate, car);
     }
 }

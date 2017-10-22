@@ -28,13 +28,13 @@ public class CarController {
     }
 
     @RequestMapping(value = "/{plate}", method = RequestMethod.DELETE)
-    public Car deleteCar(@PathVariable(value = "plate") String plate) {
+    public Car deleteCar(@PathParam(value = "plate") String plate) {
         return service.deleteCar(plate);
     }
 
-    @PutMapping(value = "/updated/{plate}/{powerRating}")
-    public Car updateCar(@PathVariable(value = "plate") String plate, @PathVariable(value = "powerRating") double powerRating) {
-        return service.updateCar(plate, powerRating);
+    @RequestMapping(value = "/{plate}", method = RequestMethod.PUT)
+    public Car updateCar(@PathParam(value = "plate") String plate, Car car) {
+        return service.updateCar(plate, car);
     }
 
 }
