@@ -9,8 +9,7 @@ public class CarService {
 
     private CarsList carsList = new CarsList();
 
-    public Car newCar(String plate, double powerRating){
-        Car car = new Car(plate, powerRating);
+    public Car newCar(Car car){
         carsList.addCar(car);
         return car;
     }
