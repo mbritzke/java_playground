@@ -2,26 +2,26 @@
 #### Features:
 
 ```
-POST /car/
+POST /car
 ```
 Add new car;
 
 ```
-GET /car/{plate}
+GET /{plate}
 ```
 Return a car based on its license plate;
 
 ```
-GET /car/
+GET /
 ```
 Return a list with all cars;
 
 ```
-DELETE /car/{plate}
+DELETE /{plate}
 ```
 Deletes a car based on its license plate;
 
 ```
-PUT /car/{plate}
+PUT /{plate}
 ```
 Updates a car based on its license plate;
