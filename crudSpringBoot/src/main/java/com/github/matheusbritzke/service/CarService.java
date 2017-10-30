@@ -1,6 +1,6 @@
 package com.github.matheusbritzke.service;
 
-import com.github.matheusbritzke.car.Car;
+import com.github.matheusbritzke.model.Car;
 import com.github.matheusbritzke.persistence.CarsDAO;
 
 import java.util.ArrayList;

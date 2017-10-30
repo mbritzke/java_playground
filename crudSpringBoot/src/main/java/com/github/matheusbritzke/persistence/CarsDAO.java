@@ -1,6 +1,6 @@
 package com.github.matheusbritzke.persistence;
 
-import com.github.matheusbritzke.car.Car;
+import com.github.matheusbritzke.model.Car;
 import com.github.matheusbritzke.exception.CarException;
 
 import java.util.ArrayList;

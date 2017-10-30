@@ -1,4 +1,4 @@
-package com.github.matheusbritzke.car;
+package com.github.matheusbritzke.model;
 
 public class Car {
 
@@ -30,7 +30,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "car{" +
+        return "model{" +
                 "plate='" + plate + '\'' +
                 ", powerRating=" + powerRating +
                 '}';

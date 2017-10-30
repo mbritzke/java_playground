@@ -1,6 +1,6 @@
 package com.github.matheusbritzke.controller;
 
-import com.github.matheusbritzke.car.Car;
+import com.github.matheusbritzke.model.Car;
 import com.github.matheusbritzke.service.CarService;
 import org.springframework.web.bind.annotation.*;
 
