@@ -8,11 +8,12 @@ import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 
 @RestController
+@RequestMapping("/car")
 public class CarController {
 
     private CarService service = new CarService();
 
-    @RequestMapping(value = "/car", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public Car newCar(Car car) {
         return service.newCar(car);
     }
