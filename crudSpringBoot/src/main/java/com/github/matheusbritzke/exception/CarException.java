@@ -1,5 +1,8 @@
 package com.github.matheusbritzke.exception;
 
-import com.github.matheusbritzke.model.Car;
+public class CarException extends RuntimeException {
 
-public class CarException extends Car {}
+    public CarException() {
+        super("CAR NOT FOUND");
+    }
+}

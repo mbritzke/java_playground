@@ -25,7 +25,7 @@ public class CarsDAO {
         return carsList;
     }
 
-    public Car deleteCar(String plate) {
+    public Car deleteCar(String plate){
         for (int i = 0; i < carsList.size(); i++) {
             if(carsList.get(i).getPlate().equalsIgnoreCase(plate)){
                 Car car = carsList.get(i);
@@ -33,7 +33,7 @@ public class CarsDAO {
                 return car;
             }
         }
-        return new CarException();
+        throw new CarException();
     }
 
     public Car returnCar(String plate) {
@@ -41,7 +41,7 @@ public class CarsDAO {
             if (iterator.getPlate().equalsIgnoreCase(plate))
                 return iterator;
         }
-        return new CarException();
+        throw new CarException();
     }
 
     public Car updateCar(String plate, Car car) {
@@ -51,7 +51,7 @@ public class CarsDAO {
                 return car;
             }
         }
-        return new CarException();
+        throw new CarException();
     }
 
 }
