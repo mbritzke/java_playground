@@ -4,7 +4,6 @@ import com.github.matheusbritzke.model.Car;
 import com.github.matheusbritzke.service.CarService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.ArrayList;
 
 @RestController
@@ -19,7 +18,7 @@ public class CarController {
     }
 
     @RequestMapping(value = "/{plate}", method = RequestMethod.GET)
-    public Car findCar(@PathParam(value = "plate") String plate) {
+    public Car findCar(@PathVariable(value = "plate") String plate) {
         return service.findCar(plate);
     }
 
@@ -29,12 +28,12 @@ public class CarController {
     }
 
     @RequestMapping(value = "/{plate}", method = RequestMethod.DELETE)
-    public Car deleteCar(@PathParam(value = "plate") String plate) {
+    public Car deleteCar(@PathVariable(value = "plate") String plate) {
         return service.deleteCar(plate);
     }
 
     @RequestMapping(value = "/{plate}", method = RequestMethod.PUT)
-    public Car updateCar(@PathParam(value = "plate") String plate, Car car) {
+    public Car updateCar(@PathVariable(value = "plate") String plate, Car car) {
         return service.updateCar(plate, car);
     }
 
