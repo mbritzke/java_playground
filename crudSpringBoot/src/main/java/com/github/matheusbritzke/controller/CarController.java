@@ -13,7 +13,7 @@ public class CarController {
     private CarService service = new CarService();
 
     @RequestMapping(method = RequestMethod.POST)
-    public Car newCar(Car car) {
+    public Car newCar(@RequestBody Car car) {
         return service.newCar(car);
     }
 
@@ -33,7 +33,7 @@ public class CarController {
     }
 
     @RequestMapping(value = "/{plate}", method = RequestMethod.PUT)
-    public Car updateCar(@PathVariable(value = "plate") String plate, Car car) {
+    public Car updateCar(@PathVariable(value = "plate") String plate, @RequestBody Car car) {
         return service.updateCar(plate, car);
     }
 
