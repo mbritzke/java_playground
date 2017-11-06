@@ -1,9 +1,9 @@
-package com.github.matheusbritzke.persistence;
+package com.github.matheusbritzke.repository;
 
 import com.github.matheusbritzke.model.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookDAO extends JpaRepository<Book, Long>{
+public interface BookRepository extends JpaRepository<Book, Long>{
 }
