@@ -1,16 +1,15 @@
 package com.github.matheusbritzke.model;
 
 import org.hibernate.validator.constraints.NotBlank;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "notes")
+@Table(name = "books")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(value = {"createdAt", "updatedAt"}, allowGetters = true)
-public class Book {
+public class Book implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
