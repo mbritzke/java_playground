@@ -16,13 +16,13 @@ public class Book implements Serializable {
     private int id;
 
     @NotBlank
-    private String nome;
-    private String genero;
+    private String name;
+    private String gender;
 
     public Book(int id, String nome, String genero) {
         this.id = id;
-        this.nome = nome;
-        this.genero = genero;
+        this.name = nome;
+        this.gender = genero;
     }
 
     public int getId() {
@@ -33,28 +33,28 @@ public class Book implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String nome) {
+        this.name = nome;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", genero='" + genero + '\'' +
+                ", nome='" + name + '\'' +
+                ", genero='" + gender + '\'' +
                 '}';
     }
 }
