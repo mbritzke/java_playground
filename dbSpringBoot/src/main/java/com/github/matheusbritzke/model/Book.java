@@ -1,35 +1,25 @@
 package com.github.matheusbritzke.model;
 
-import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "books")
-@EntityListeners(AuditingEntityListener.class)
-public class Book implements Serializable {
+public class Book{
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    private Long id;
 
-    @NotBlank
     private String name;
     private String gender;
 
-    public Book(int id, String nome, String genero) {
-        this.id = id;
-        this.name = nome;
-        this.gender = genero;
-    }
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
