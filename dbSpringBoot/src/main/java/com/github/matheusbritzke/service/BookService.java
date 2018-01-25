@@ -6,6 +6,8 @@ import com.github.matheusbritzke.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookService {
 
@@ -17,8 +19,8 @@ public class BookService {
         return newBook;
     }
 
-    public Iterable<Book> getAllBooks() {
-        return bookRepository.findAll();
+    public List<Book> getAllBooks() {
+        return (List<Book>) bookRepository.findAll();
     }
 
     public Book getBookById(Long bookId) {

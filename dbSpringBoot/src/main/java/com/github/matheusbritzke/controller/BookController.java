@@ -5,6 +5,8 @@ import com.github.matheusbritzke.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/book")
 public class BookController {
@@ -18,7 +20,7 @@ public class BookController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public Iterable<Book> getAllBooks() {
+    public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
 
