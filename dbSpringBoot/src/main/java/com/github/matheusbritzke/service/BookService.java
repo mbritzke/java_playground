@@ -13,11 +13,8 @@ public class BookService {
     private BookRepository bookRepository;
 
     public Book addBook(Book newBook){
-        Book book = new Book();
-        book.setName(newBook.getName());
-        book.setGender(newBook.getGender());
-        bookRepository.save(book);
-        return book;
+        bookRepository.save(newBook);
+        return newBook;
     }
 
     public Iterable<Book> getAllBooks() {
