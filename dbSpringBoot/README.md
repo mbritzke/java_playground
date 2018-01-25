@@ -1,27 +1,27 @@
-# Book API
+# Books API
 #### Features:
 
 ```
-POST /book/
+POST /books/
 ```
 Add new book;
 
 ```
-GET /book/{bookId}
+GET /books/{bookId}
 ```
 Returns book based on your id;
 
 ```
-GET /book/
+GET /books/
 ```
 Returns all books;
 
 ```
-DELETE /book/{bookId}
+DELETE /books/{bookId}
 ```
 Delete the book based on your id;
 
 ```
-PUT /book/{bookId}
+PUT /books/{bookId}
 ```
 Updates book based on your id;
