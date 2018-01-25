@@ -1,6 +1,6 @@
 package com.github.matheusbritzke.service;
 
-import com.github.matheusbritzke.exception.BookException;
+import com.github.matheusbritzke.exception.BookNotFoundException;
 import com.github.matheusbritzke.model.Book;
 import com.github.matheusbritzke.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,7 @@ public class BookService {
     private Book findBook(Long bookId){
         Book book = bookRepository.findOne(bookId);
         if(bookId == null || bookId < 0 || book == null)
-            throw new BookException();
+            throw new BookNotFoundException();
         return book;
     }
 }
