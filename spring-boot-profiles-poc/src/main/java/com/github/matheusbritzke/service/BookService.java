@@ -1,8 +1,7 @@
 package com.github.matheusbritzke.service;
 
-import com.github.matheusbritzke.exception.BookNotFoundException;
 import com.github.matheusbritzke.model.Book;
-import com.github.matheusbritzke.repository.BookRepository;
+import com.github.matheusbritzke.repository.BookDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,40 +11,26 @@ import java.util.List;
 public class BookService {
 
     @Autowired
-    private BookRepository bookRepository;
+    private BookDAO bookDAO;
 
     public Book addBook(Book newBook){
-        bookRepository.save(newBook);
-        return newBook;
+        return bookDAO.insertBook(newBook);
     }
 
     public List<Book> getAllBooks() {
-        return (List<Book>) bookRepository.findAll();
+        return bookDAO.getAllBooks();
     }
 
-    public Book getBookById(Long bookId) {
-        return findBook(bookId);
+    public Book getBookById(Integer bookId) {
+        return bookDAO.getBookById(bookId);
     }
 
-    public Book updateBook(Long bookId, Book book) {
-        Book oldBook = findBook(bookId);
-        oldBook.setName(book.getName());
-        oldBook.setGender(book.getGender());
-        bookRepository.save(oldBook);
-        return oldBook;
+    public Book updateBook(Integer bookId, Book book) {
+        return bookDAO.updateBook(bookId, book);
     }
 
-
-    public Book deleteBook(Long bookId) {
-        Book oldBook = findBook(bookId);
-        bookRepository.delete(bookId);
-        return oldBook;
+    public Book deleteBook(Integer bookId) {
+        return bookDAO.deleteBook(bookId);
     }
 
-    private Book findBook(Long bookId){
-        Book book = bookRepository.findOne(bookId);
-        if(bookId == null || bookId < 0 || book == null)
-            throw new BookNotFoundException();
-        return book;
-    }
 }
